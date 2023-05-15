@@ -34,7 +34,7 @@ inquirer
   .then((data) => {
     let generatedLogo = userSelectedShape(data);
     let fileTemplate = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200"> ${generatedLogo} </svg>`;
-    fs.writeFile("logo.svg", fileTemplate, (err) => {
+    fs.writeFile("./examples/logo.svg", fileTemplate, (err) => {
       err ? console.log(err) : console.log("Generated logo.svg");
     });
   });
