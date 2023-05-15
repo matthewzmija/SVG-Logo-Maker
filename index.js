@@ -1,7 +1,9 @@
+// These variables are imported from package.json and lib/shapes.js respectively
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { Circle, Triangle, Square } = require("./lib/shapes.js");
 
+// Inquirer package used to ask the user questions
 inquirer
   .prompt([
     {
@@ -31,6 +33,7 @@ inquirer
         "Please provide a color keyword or a hexadecimal number so that the shape can be displayed in that color on your logo",
     },
   ])
+  // Calls the function down below and creates an SVG file in the examples folder based on how the user answered the questions
   .then((data) => {
     let generatedLogo = userSelectedShape(data);
     let fileTemplate = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200"> ${generatedLogo} </svg>`;
@@ -39,6 +42,7 @@ inquirer
     });
   });
 
+// Function called 'userSelectedShape' takes the input gathered from the questions asked and returns in correspondence
 function userSelectedShape(data) {
   switch (data.shape) {
     case "Circle":
