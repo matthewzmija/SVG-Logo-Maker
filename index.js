@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const { text } = require("stream/consumers");
 
 inquirer.prompt([
   {
@@ -7,6 +8,7 @@ inquirer.prompt([
     name: "text",
     message:
       "Please provide the text that you want displayed on the logo (Limit the text to a maximum of 3 characters)",
+    validate: (text) => text.length >= 1 && text.length <= 3,
   },
   {
     type: "input",
@@ -29,4 +31,6 @@ inquirer.prompt([
   },
 ]);
 
-//Need to add a function to provide an error message when more that 3 characters are displayed
+//.then block -> if statement or a switch statement which will check data.shape to see which the user selected, call the render function
+// const generatedLogo = square.render()
+// let template = <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200"> ${generatedLogo} </svg>
