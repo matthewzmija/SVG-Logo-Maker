@@ -21,6 +21,8 @@ https://github.com/matthewzmija/SVG-Logo-Maker
 
 ## URL of YouTube link providing a demonstration of the application
 
+https://youtu.be/AA00b71iBmI
+
 ## License
 
 MIT
